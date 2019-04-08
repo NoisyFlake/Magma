@@ -115,9 +115,12 @@ NSMutableDictionary *prefs, *defaultPrefs;
 
 	backdropView.backgroundColor = [UIColor RGBAColorFromHexString:sliderColor];
 	colorLayers(self.layer.sublayers, [[UIColor RGBAColorFromHexString:sliderColor] CGColor]);
+
 	if (![sliderColor containsString:@":0.00"]) {
+		backdropView.brightness = 0;
 		backdropView.colorAddColor = [UIColor clearColor];
 	} else {
+		backdropView.brightness = 0.52;
 		backdropView.colorAddColor = [UIColor colorWithRed:1.00 green:1.00 blue:1.00 alpha:0.25];
 	}
 
