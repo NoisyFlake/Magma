@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>enabled</key>
+	<true/>
+
+	<key>toggleAirDrop</key>
+	<string>#007AFF:1.00</string>
+	<key>toggleAirplaneMode</key>
+	<string>#FF9500:1.00</string>
+	<key>toggleBluetooth</key>
+	<string>#007AFF:1.00</string>
+	<key>toggleCellularData</key>
+	<string>#4CD964:1.00</string>
+	<key>toggleHotspot</key>
+	<string>#4CD964:1.00</string>
+	<key>toggleWiFi</key>
+	<string>#007AFF:1.00</string>
+
+	<key>glyphRotationLock</key>
+	<string>#FF5A63:1.00</string>
+	<key>glyphDoNotDisturb</key>
+	<string>#5E67D6:1.00</string>
+	<key>glyphCarMode</key>
+	<string>#5E67D6:1.00</string>
+	<key>glyphLowPowerMode</key>
+	<string>#FFCC00:1.00</string>
+	<key>glyphRecording</key>
+	<string>#FF0000:1.00</string>
+	<key>glyphFlashlight</key>
+	<string>#007AFF:1.00</string>
+	<key>glyphAirPlay</key>
+	<string>#007AFF:1.00</string>
+	<key>glyphLocation</key>
+	<string>#003EFF:1.00</string>
+	<key>glyphTimer</key>
+	<string>#FF9500:1.00</string>
+	<key>glyphMute</key>
+	<string>#FF0000:1.00</string>
+
+	<key>sliderBrightness</key>
+	<string>#000000:0.00</string>
+	<key>sliderVolume</key>
+	<string>#000000:0.00</string>
+</dict>
+</plist>
