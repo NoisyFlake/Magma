@@ -96,32 +96,42 @@ NSMutableDictionary *prefs, *defaultPrefs;
 %end
 
 %hook CCUIModuleSliderView
--(void)layoutSubviews {
+-(void)didMoveToWindow {
 	%orig;
 
-	MTMaterialView *matView = MSHookIvar<MTMaterialView *>(self, "_continuousValueBackgroundView");
-	_MTBackdropView* backdropView = MSHookIvar<_MTBackdropView *>(matView, "_backdropView");
+	// On iOS 12 we could just hook an iVar to get the backdropView, on iOS 11 this is the only way
+	for (UIView *subview in self.subviews) {
+		if (![subview isMemberOfClass:%c(UIView)]) continue;
+		for (_MTBackdropView *backdropView in subview.allSubviews) {
+			if (![backdropView isMemberOfClass:%c(_MTBackdropView)]) continue;
 
-	UIViewController *controller = [self _viewControllerForAncestor];
-	NSString *sliderColor = nil;
+			HBLogDebug(@"I GOT CALLED");
 
-	if ([[controller description] containsString:@"Display"]) {
-		sliderColor = getValue(@"sliderBrightness");
-	} else if ([[controller description] containsString:@"Audio"]) {
-		sliderColor = getValue(@"sliderVolume");
-	}
+			// _MTBackdropView* backdropView = MSHookIvar<_MTBackdropView *>(matView, "_backdropView");
 
-	if (sliderColor == nil) return;
+			UIViewController *controller = [self _viewControllerForAncestor];
+			NSString *sliderColor = nil;
 
-	backdropView.backgroundColor = [UIColor RGBAColorFromHexString:sliderColor];
-	colorLayers(self.layer.sublayers, [[UIColor RGBAColorFromHexString:sliderColor] CGColor]);
+			if ([[controller description] containsString:@"Display"]) {
+				sliderColor = getValue(@"sliderBrightness");
+			} else if ([[controller description] containsString:@"Audio"]) {
+				sliderColor = getValue(@"sliderVolume");
+			}
 
-	if (![sliderColor containsString:@":0.00"]) {
-		backdropView.brightness = 0;
-		backdropView.colorAddColor = [UIColor clearColor];
-	} else {
-		backdropView.brightness = 0.52;
-		backdropView.colorAddColor = [UIColor colorWithRed:1.00 green:1.00 blue:1.00 alpha:0.25];
+			if (sliderColor == nil) return;
+
+			backdropView.backgroundColor = [UIColor RGBAColorFromHexString:sliderColor];
+			colorLayers(self.layer.sublayers, [[UIColor RGBAColorFromHexString:sliderColor] CGColor]);
+
+			if (![sliderColor containsString:@":0.00"]) {
+				backdropView.brightness = 0;
+				backdropView.colorAddColor = [UIColor clearColor];
+			} else {
+				backdropView.brightness = 0.52;
+				backdropView.colorAddColor = [UIColor colorWithRed:1.00 green:1.00 blue:1.00 alpha:0.25];
+			}
+
+		}
 	}
 
 }
