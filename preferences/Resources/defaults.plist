@@ -38,6 +38,8 @@
 	<string>#FF9500:1.00</string>
 	<key>glyphMute</key>
 	<string>#FF0000:1.00</string>
+	<key>glyphVPN</key>
+	<string>#003EFF:1.00</string>
 
 	<key>sliderBrightness</key>
 	<string>#000000:0.00</string>

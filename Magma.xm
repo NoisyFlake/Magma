@@ -80,6 +80,8 @@ NSMutableDictionary *prefs, *defaultPrefs;
 	} else if ([description containsString:@"Mute"]) {
 		// Fix inactive color because the same shape is used for on/off state
 		toggleColor = [self.glyphState isEqual:@"ringer"] ? @"#FFFFFF:1.00" : getValue(@"glyphMute");
+	} else if ([description containsString:@"VPN"]) {
+		toggleColor = getValue(@"glyphVPN");
 	}
 
 	if (toggleColor == nil) return;
