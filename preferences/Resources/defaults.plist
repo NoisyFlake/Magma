@@ -18,28 +18,42 @@
 	<key>toggleWiFi</key>
 	<string>#007AFF:1.00</string>
 
-	<key>glyphRotationLock</key>
+	<key>CCUIOrientationLockModule</key>
 	<string>#FF5A63:1.00</string>
-	<key>glyphDoNotDisturb</key>
+	<key>DNDUIControlCenterModule</key>
 	<string>#5E67D6:1.00</string>
-	<key>glyphCarMode</key>
+	<key>CCUICarModeModule</key>
 	<string>#5E67D6:1.00</string>
-	<key>glyphLowPowerMode</key>
+	<key>CCUILowPowerModule</key>
 	<string>#FFCC00:1.00</string>
-	<key>glyphRecording</key>
+	<key>RPControlCenterModuleViewController</key>
 	<string>#FF0000:1.00</string>
-	<key>glyphFlashlight</key>
+	<key>CCUIFlashlightModuleViewController</key>
 	<string>#007AFF:1.00</string>
-	<key>glyphAirPlay</key>
+	<key>MPAVAirPlayMirroringMenuModuleViewController</key>
 	<string>#007AFF:1.00</string>
-	<key>glyphLocation</key>
+	<key>LocationModule</key>
 	<string>#003EFF:1.00</string>
-	<key>glyphTimer</key>
+	<key>MTCCTimerViewController</key>
 	<string>#FF9500:1.00</string>
-	<key>glyphMute</key>
+	<key>CCUIMuteModule</key>
 	<string>#FF0000:1.00</string>
-	<key>glyphVPN</key>
+	<key>CCVPNModule</key>
 	<string>#003EFF:1.00</string>
+	<key>WatusiDeliveryReceipts</key>
+	<string>#007AFF:1.00</string>
+	<key>WatusiLastSeen</key>
+	<string>#007AFF:1.00</string>
+	<key>WatusiReadReceipts</key>
+	<string>#007AFF:1.00</string>
+	<key>AutoLock</key>
+	<string>#36ACCC:1.00</string>
+	<key>CCVibrationModule</key>
+	<string>#FF0000:1.00</string>
+	<key>XBReduceWhiteModule</key>
+	<string>#78A3D4:1.00</string>
+	<key>CTXTestModule</key>
+	<string>#5E67D6:1.00</string>
 
 	<key>sliderBrightness</key>
 	<string>#000000:0.00</string>

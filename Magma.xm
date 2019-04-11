@@ -58,30 +58,15 @@ NSMutableDictionary *prefs, *defaultPrefs;
 		description = [module description];
 	}
 
-	NSString *toggleColor = nil;
-	if ([description containsString:@"OrientationLock"]) {
-		toggleColor = getValue(@"glyphRotationLock");
-	} else if ([description containsString:@"DND"]) {
-		toggleColor = getValue(@"glyphDoNotDisturb");
-	} else if ([description containsString:@"LowPower"]) {
-		toggleColor = getValue(@"glyphLowPowerMode");
-	} else if ([description containsString:@"RPControlCenter"]) {
-		toggleColor = getValue(@"glyphRecording");
-	} else if ([description containsString:@"Timer"]) {
-		toggleColor = getValue(@"glyphTimer");
-	} else if ([description containsString:@"LocationModule"]) {
-		toggleColor = getValue(@"glyphLocation");
-	} else if ([description containsString:@"Flashlight"]) {
-		toggleColor = getValue(@"glyphFlashlight");
-	} else if ([description containsString:@"CarMode"]) {
-		toggleColor = getValue(@"glyphCarMode");
-	} else if ([description containsString:@"AirPlayMirroring"]) {
-		toggleColor = getValue(@"glyphAirPlay");
-	} else if ([description containsString:@"Mute"]) {
-		// Fix inactive color because the same shape is used for on/off state
-		toggleColor = [self.glyphState isEqual:@"ringer"] ? @"#FFFFFF:1.00" : getValue(@"glyphMute");
-	} else if ([description containsString:@"VPN"]) {
-		toggleColor = getValue(@"glyphVPN");
+	NSUInteger location = [description rangeOfString:@":"].location;
+	if(location == NSNotFound) return;
+	description = [description substringWithRange:NSMakeRange(1, location - 1)];
+
+	NSString *toggleColor = getValue(description);
+
+	// Fix for the Mute module because it uses the same shape for both states
+	if ([description isEqual:@"CCUIMuteModule"] && [self.glyphState isEqual:@"ringer"]) {
+		toggleColor = @"#FFFFFF:1.00";
 	}
 
 	if (toggleColor == nil) return;
