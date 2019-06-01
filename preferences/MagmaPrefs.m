@@ -93,7 +93,7 @@
 		version.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
 		version.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:15.0f];
 		version.textColor = [UIColor whiteColor];
-		version.text = @"Version 1.0.2";
+		version.text = @"Version 1.0.4";
 		version.backgroundColor = [UIColor clearColor];
 		version.textAlignment = NSTextAlignmentCenter;
 

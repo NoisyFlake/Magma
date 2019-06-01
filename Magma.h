@@ -1,10 +1,12 @@
 @interface CCUIRoundButton : UIControl
 @property (nonatomic,retain) UIView * selectedStateBackgroundView;
+-(id)_viewControllerForAncestor;
 @end
 
 @interface CCUIButtonModuleView : UIControl
 @property (nonatomic,copy) NSString * glyphState;
 -(void)colorButton;
+-(id)_viewControllerForAncestor;
 @end
 
 @interface CCUIToggleModule : NSObject
@@ -26,6 +28,7 @@
 @end
 
 @interface CCUIModuleSliderView : UIControl
+-(id)_viewControllerForAncestor;
 @end
 
 @interface MTMaterialView : UIView
