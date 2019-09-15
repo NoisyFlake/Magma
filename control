@@ -1,7 +1,7 @@
 Package: com.noisyflake.magma
 Name: Magma
 Depends: mobilesubstrate, firmware (>= 11.0), me.nepeta.libcolorpicker
-Version: 1.0.4
+Version: 1.0.5
 Architecture: iphoneos-arm
 Description: Color your Control Center
 Depiction: https://apt.noisyflake.com/depictions/index.html?id=com.noisyflake.magma
